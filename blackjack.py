@@ -16,20 +16,18 @@ def deal(player, dealnum):
             therandomint = randint(0,len(cards) - 1)
             player[0] = player[0] + cards.keys()[therandomint] + " "
             player[1] = player[1] + cards[cards.keys()[therandomint]]
-            if cards[cards.keys()[therandomint]] == 0 or player[1] > 21:
-                if player[1] + 11 <= 21 :
-                    player[1] = player[1] + 11
-                    player[3] = player[3] + 1
-                elif player[1] + 11 > 21 :
-                    if player[1] + 1 <= 21 :
-                        player[1] = player[1] + 1
-                    elif player[1] + 1 > 21 and player[3] > 0 :
-                        player[1] = player[1] - 10
-                        player[3] = player[3] - 1
+            if cards[cards.keys()[therandomint]] == 0:
+                player[1] = player[1] + 11
+                player[3] = player[3] + 1
+            if player[1] > 21 and player[3] > 0:
+                player[1] = player[1] - 10
+                player[3] = player[3] - 1
             cards.pop(cards.keys()[therandomint])
             if player[1] > 21 :
                 player[0] = player[0] + "bust"
                 player[2] = False
+    if player[2] == False:
+        stay()
     return player
 
 def dealer():
