@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from random import randint
-from numpy import character
 
 def shuffle():
     global cards
@@ -32,8 +31,7 @@ def deal(player, dealnum):
 
 def dealer():
     global dealer
-    global character
-    
+    global character    
             
 def reset():
     global character
@@ -79,6 +77,7 @@ def printout(hide):
         print "dealercardvalue: " + str(dealer[1]) + "\n"
     print "counter: " + str(len(cards)) + "\n"
 
+print "\n" * 100
 print "BLACKJACK\n\nCopyright Isaac Lo 2015\n"
 raw_input("Press Enter to continue...")
 print "\n" * 100
